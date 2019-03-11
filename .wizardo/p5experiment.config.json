@@ -1,5 +1,5 @@
 {
-  "generator": "p5_experiment",
+  "generator": "p5experiment",
   "templates": [
     {
       "source_template": "index.html",
