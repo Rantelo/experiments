@@ -1,0 +1,24 @@
+{
+  "generator": "p5_experiment",
+  "templates": [
+    {
+      "source_template": "index.html",
+      "destination": "___experiment___/index.html"
+    },
+    {
+      "source_template": "sketch.js",
+      "destination": "___experiment___/sketch.js"
+    },
+    {
+      "source_template": "README.md",
+      "destination": "___experiment___/README.md"
+    }
+  ],
+  "modifiers": [
+    {
+      "path_to_file": "path/to/existing/existing_file.js",
+      "regex": "Hello World ___view___\n",
+      "text_to_insert": "Just matched with `___view___`\n"
+    }
+  ]
+}
