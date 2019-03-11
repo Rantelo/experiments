@@ -14,5 +14,6 @@
       "destination": "___experiment___"
     }
   ],
-  "modifiers": []
+  "modifiers": [],
+  "variables": [ "___version_0_7_3___" ]
 }
