@@ -10,10 +10,17 @@
  *       https://youtu.be/A1AshhzV4Xk?t=154
  * */
 
-let rain;
 const MAX_DEPTH = 100;
+let rain;
+let img;
+
+function preload() {
+  //img = loadImage('cosmos.jpg');
+}
+
 function setup() {
   createCanvas(800,600);
+  //image(img, 0, 0);
   background(20);
   rain = new Rain(50, 1.03);
 }
@@ -25,42 +32,6 @@ function draw() {
   rain.draw();
 }
 
-class Rain {
-  constructor(count, velocity) {
-    this.count = count;
-    this.velocity = velocity;
-    this.stars = new Array(count)
-      .fill(0)
-      .map(e => new Star());
-  }
-  update() {
-    this.stars = this.stars
-      .map(s => {
-        if (s.z > MAX_DEPTH) { s = new Star() }
-        s.z *= this.velocity;
-        return s;
-      })
-  }
-  draw() {
-    this.stars.forEach(s => s.draw());
-  }
-}
-class Star {
-  constructor(x, y, z) {
-    this.x = random(-width, width);
-    this.y = random(-height, height);
-    this.z = random(1, MAX_DEPTH);
-  }
-  draw() {
-    const {x, y, z} = this;
-    strokeWeight(map(1 + z, 0, MAX_DEPTH, 0, 3));
-    stroke("white");
-    point(
-      map(x*z, 0, width*MAX_DEPTH, 0, width),
-      map(y*z, 0, height*MAX_DEPTH, 0, height)
-      );
-  }
-}
 
 function credits() {
   fill("white");
