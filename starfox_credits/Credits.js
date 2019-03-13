@@ -1,11 +1,9 @@
 const CREDIT_STATE = {
-  LEFT_SWIPE: "left_swipe",
-  WAIT_SHORT: "wait_short",
-  WAIT_LONG: "wait_long",
-  COMING_AT_YOU: "coming_at_you",
-  UP: "up",
-  DOWN: "down",
-  RESET: "reset",
+  LEFT_SWIPE: "LEFT_SWIPE",
+  WAIT_SHORT: "WAIT_SHORT",
+  WAIT_LONG: "WAIT_LONG",
+  COMING_AT_YOU: "COMING_AT_YOU",
+  RESET: "RESET",
   END: "END"
 };
 
