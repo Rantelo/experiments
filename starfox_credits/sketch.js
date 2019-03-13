@@ -12,31 +12,37 @@
 
 const MAX_DEPTH = 100;
 let rain;
+let credits;
 let img;
+let myfont;
+let canvas;
 
 function preload() {
-  //img = loadImage('cosmos.jpg');
+  img = loadImage("cosmos.png");
+  myfont = loadFont("Star-Fox-Starwing.ttf");
 }
-
 function setup() {
-  createCanvas(800,600);
-  //image(img, 0, 0);
-  background(20);
-  rain = new Rain(50, 1.03);
+  canvas = createCanvas(windowWidth,windowHeight);
+  rain = new Rain(100, 1.01);
+  credits = new Credits([
+    "Starfox Credits",
+    "Developer: rantelo",
+    "Tech Stack: P5.js"
+  ]);
+
+  textFont(myfont);
 }
 
 function draw() {
-  background(20);
-  translate(width/2, height/2); //translate the origin
+  image(img, 0, 0, width, height);
+  credits.draw();
+
+  translate(width/2, height/2); //translate the origin to center for stars
   rain.update();
   rain.draw();
 }
 
 
-function credits() {
-  fill("white");
-  textSize(32);
-  const txt = "hello StarfoxCredits";
-  const title_w = textWidth(txt);
-  text(txt, width/2 - title_w/2, height/2)
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
 }
