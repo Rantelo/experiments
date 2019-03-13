@@ -26,8 +26,8 @@ function setup() {
   rain = new Rain(100, 1.01);
   credits = new Credits([
     "Starfox Credits",
-    "Developer: rantelo",
-    "Tech Stack: P5.js"
+    "Developer - rantelo",
+    "Tech Stack - P5.js"
   ]);
 
   textFont(myfont);
@@ -41,7 +41,6 @@ function draw() {
   rain.update();
   rain.draw();
 }
-
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
