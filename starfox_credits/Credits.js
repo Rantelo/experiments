@@ -21,6 +21,7 @@ class Credits {
     this.timer = 0;
   }
 
+  //TODO: Separate update from draw
   draw() {
     fill("white");
     strokeWeight(0);
@@ -91,6 +92,5 @@ class Credits {
       height/2 + this.y
     );
   }
-
 }
 
