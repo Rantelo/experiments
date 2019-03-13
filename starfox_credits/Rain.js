@@ -20,5 +20,3 @@ class Rain {
     this.stars.forEach(s => s.draw());
   }
 }
-
-module.exports = Rain;
