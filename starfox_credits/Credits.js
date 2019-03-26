@@ -29,7 +29,7 @@ class Credits {
 
     switch (this.state) {
       case CREDIT_STATE.LEFT_SWIPE: {
-        this.x += 1;
+        this.x += 3;
         if (this.x > 300) {
           this.state = CREDIT_STATE.WAIT_SHORT;
         }
@@ -38,7 +38,7 @@ class Credits {
 
       case CREDIT_STATE.WAIT_SHORT: {
         this.timer += 1;
-        if (this.timer > 50) {
+        if (this.timer > 100) {
           this.timer = 0;
           this.state = CREDIT_STATE.COMING_AT_YOU;
         }
