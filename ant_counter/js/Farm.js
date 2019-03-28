@@ -1,3 +1,7 @@
+/* *
+ * TODO:
+ * 1. Find a way to distribute evenly even if pattern size will not give an even distribution
+ * */
 class Farm {
   constructor(population=2) {
     this.population = population;
@@ -13,10 +17,26 @@ class Farm {
 
   draw() {
     this.ants.forEach(e => {
-
-      // TODO avoid overlapping
       e.move();
       e.draw();
     })
+  }
+
+  patternChanged(pattern) {
+    if (pattern <= 0) return;
+    if (pattern.length > this.population) {
+      let range_dist = floor(pattern.length/this.population);
+      this.ants.reduce((acc, e) => {
+        e.dirx = pattern[acc][0];
+        e.diry = pattern[acc][1];
+        return acc + range_dist;
+      }, 0);
+    } else {
+      this.ants.reduce((acc, e) => {
+        e.dirx = pattern[acc][0];
+        e.diry = pattern[acc][1];
+        return (acc + 1) % pattern.length;
+      }, 0);
+    }
   }
 }

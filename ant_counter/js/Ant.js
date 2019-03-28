@@ -1,6 +1,13 @@
 const HEAD_WIDTH = 10
 const STEP = 3;
 
+/* *
+ * TODO:
+ * 1. Add sprite of ant
+ * 2. Add rotation of ants toward their intention
+ * 3. Add ants collition
+ * */
+
 class Ant {
   constructor( x, y, dirx=0, diry=0 ) {
     this.x = x;
@@ -32,16 +39,9 @@ class Ant {
     strokeWeight(2)
     stroke("black");
     ellipse(this.x, this.y, w, h);
-
-    strokeWeight(2)
-    stroke("black");
-    point(this.dirx,this.diry);
   }
 
   move() {
-    // update 1 position closer to final position
-    // decrease the distance in x OR y by one STEP
-
     if (random() > 0.5) {
       if (this.x != this.dirx) {
         this.x = this.x + (Math.sign(this.dirx - this.x) * STEP);
