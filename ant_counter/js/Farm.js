@@ -22,6 +22,23 @@ class Farm {
     })
   }
 
+  addAnt() {
+    console.log('add');
+    this.population++;
+    this.ants.push(new Ant(
+      random(0,width),
+      random(0,height),
+      random(0,width),
+      random(0,height)
+    ));
+  }
+
+  removeAnt() {
+    console.log('remove');
+    this.ants.pop();
+    this.population++;
+  }
+
   patternChanged(pattern) {
     if (pattern <= 0) return;
     if (pattern.length > this.population) {
