@@ -4,8 +4,9 @@ const STEP = 3;
 /* *
  * TODO:
 -* 1. Add sprite of ant
- * 2. Add rotation of ants toward their intention
+-* 2. Add rotation of ants toward their intention
  * 3. Add ants collition
+ * 4. Ant gets crazy when it reaches its destination. Fix it
  * */
 
 class Ant {
@@ -17,32 +18,13 @@ class Ant {
   }
 
   draw() {
-
     const { x, y, dirx, diry } = this;
-    const a = max(y, diry) - min(y, diry);
-    const c = dist(x, y, dirx, diry);
-
-    const rotation = sin(a,c);
-
-    /*
-    push();
-
-    translate(x - ANT_SIZE/2, y);
-    rotate(rotation);
-    image(ant, 0, 0, ANT_SIZE, ANT_SIZE);
-
-    pop();
-    /* hheeyy */
     push();
     imageMode(CENTER);
-    translate(x - ANT_SIZE/2, y - ANT_SIZE/2)
-    rotate(rotation);
+    translate(x, y)
+    rotate(atan2(diry - y, dirx - x));
     image(ant, 0, 0, ANT_SIZE, ANT_SIZE);
     pop();
-
-    /*strokeWeight(2)
-    stroke("black");
-    ellipse(this.x, this.y, w, h);*/
   }
 
   move() {

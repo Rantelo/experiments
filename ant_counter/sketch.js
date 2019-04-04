@@ -25,6 +25,7 @@ function preload() {
   ant = loadImage("./images/ant.png")
 }
 function setup() {
+  //angleMode(DEGREES);
   createCanvas(windowWidth,windowHeight);
   frameRate(30);
   farm = new Farm(1);

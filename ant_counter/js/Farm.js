@@ -8,10 +8,8 @@ class Farm {
     this.ants = new Array(population)
       .fill(0)
       .map(e => e = new Ant(
-        random(0,width),
-        random(0,height),
-        random(0,width),
-        random(0,height)
+        random(0,width), random(0,height),
+        random(0,width), random(0,height)
       ))
   }
 
@@ -23,18 +21,14 @@ class Farm {
   }
 
   addAnt() {
-    console.log('add');
     this.population++;
     this.ants.push(new Ant(
-      random(0,width),
-      random(0,height),
-      random(0,width),
-      random(0,height)
+      random(0,width), random(0,height),
+      random(0,width), random(0,height)
     ));
   }
 
   removeAnt() {
-    console.log('remove');
     this.ants.pop();
     this.population++;
   }
