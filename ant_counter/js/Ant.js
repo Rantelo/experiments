@@ -1,9 +1,9 @@
-const HEAD_WIDTH = 10
+const ANT_SIZE = 40
 const STEP = 3;
 
 /* *
  * TODO:
- * 1. Add sprite of ant
+-* 1. Add sprite of ant
  * 2. Add rotation of ants toward their intention
  * 3. Add ants collition
  * */
@@ -14,31 +14,35 @@ class Ant {
     this.y = y;
     this.dirx = dirx;
     this.diry = diry;
-    this.dimention = [HEAD_WIDTH, HEAD_WIDTH*2]
   }
 
   draw() {
- /* Rotation logic
-    const a = max(posy, diry) - min(posy, diry);
-    const c = dist(posx, posy, dirx, diry);
+
+    const { x, y, dirx, diry } = this;
+    const a = max(y, diry) - min(y, diry);
+    const c = dist(x, y, dirx, diry);
 
     const rotation = sin(a,c);
 
-    push()
-    translate(posx, posy);
-    rotate(rotation)
+    /*
+    push();
 
-    const [w,h] = this.dimention;
-    strokeWeight(2)
-    stroke("black");
-    ellipse(0, 0, w, h);
-    pop()
-  */
+    translate(x - ANT_SIZE/2, y);
+    rotate(rotation);
+    image(ant, 0, 0, ANT_SIZE, ANT_SIZE);
 
-    const [w,h] = this.dimention;
-    strokeWeight(2)
+    pop();
+    /* hheeyy */
+    push();
+    imageMode(CENTER);
+    translate(x - ANT_SIZE/2, y - ANT_SIZE/2)
+    rotate(rotation);
+    image(ant, 0, 0, ANT_SIZE, ANT_SIZE);
+    pop();
+
+    /*strokeWeight(2)
     stroke("black");
-    ellipse(this.x, this.y, w, h);
+    ellipse(this.x, this.y, w, h);*/
   }
 
   move() {
