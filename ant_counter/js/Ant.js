@@ -2,11 +2,7 @@ const ANT_SIZE = 40
 const STEP = 3;
 
 /* *
- * TODO:
--* 1. Add sprite of ant
--* 2. Add rotation of ants toward their intention
- * 3. Add ants collition
- * 4. Ant gets crazy when it reaches its destination. Fix it
+ * TODO: Add ants collition
  * */
 
 class Ant {
@@ -28,6 +24,8 @@ class Ant {
   }
 
   move() {
+    const { x, y, dirx, diry } = this;
+    if (dist(x, y, dirx, diry) < 10) return;
     if (random() > 0.5) {
       if (this.x != this.dirx) {
         this.x = this.x + (Math.sign(this.dirx - this.x) * STEP);
